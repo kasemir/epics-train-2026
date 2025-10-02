@@ -1,0 +1,10 @@
+# The simplest record that 'does' something
+# and produces changing numbers
+#
+#   softIoc -m S=training -d very_first.db
+record(calc, "$(S):random")
+{
+  field(SCAN, "1 second")
+  field(INPA, "10")
+  field(CALC, "RNDM*A")
+}
