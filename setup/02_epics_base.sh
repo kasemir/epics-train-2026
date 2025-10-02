@@ -11,5 +11,11 @@ mv base-7.0.9 base
 cd base
 make
 echo "EPICS_BASE="`pwd` > ../RELEASE.local
+
+for cmd in ascheck caget cainfo camonitor caput casw makeBaseApp.pl pvget pvinfo pvlist pvmonitor pvput softIoc softIocPVA
+do
+    ln -s `pwd`/bin/*/$cmd ../../bin
+done
+
 cd ..
 
