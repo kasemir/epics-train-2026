@@ -4,9 +4,6 @@
 # to the absolute installation path
 # TOP="."
 
-export JAVA_HOME=$HOME/training/tools/jdk
-export PATH="$JAVA_HOME/bin:$PATH"
-
 TOP=$HOME/training/tools/phoebus/phoebus-product/target
 JAR=`echo ${TOP}/product-*.jar`
 
