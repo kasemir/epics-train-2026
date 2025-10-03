@@ -23,6 +23,10 @@ sed -i 's/openjfx.version>21.0.7/openjfx.version>22.0.2/g' pom.xml
 
 rm -rf .git
 mvn -DskipTests clean install
+# Remove jackie: Not used, causes startup delay calling 'hostname'
+rm phoebus-product/target/lib/core-pv-jackie-*
+# For now remove CF, we don't have elastic etc. available
+rm phoebus-product/target/lib/app-channel*
 
 phoebus-product/phoebus.sh -help
 rm -rf ~/.m2
