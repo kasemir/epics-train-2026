@@ -1,0 +1,70 @@
+
+record(ao, "$(S):setpoint")
+{
+  field(DESC, "Desired rotation table angle")
+  field(EGU,  "deg")
+  field(PREC, "1")
+  field(DRVL, "-180")
+  field(DRVH, "180")
+  field(DOL,  "0")
+  field(PINI, "YES")
+}
+
+record(calc, "$(S):error_raw")
+{
+  field(DESC, "Angle error")
+  field(INPA, "$(S):angle")
+  field(INPB, "$(S):setpoint")
+  field(EGU,  "deg")
+  field(PREC, "1")
+  field(SCAN, ".2 second")
+  field(CALC, "B-A")
+  field(FLNK, "$(S):error")
+}
+
+record(calc, "$(S):error")
+{
+  field(DESC, "Error in +-180 deg range")
+  field(INPA, "$(S):error_raw")
+  field(EGU,  "deg")
+  field(PREC, "1")
+  field(LOPR, "-180")
+  field(HOPR, "180")
+  field(CALC, "A-NINT(A/360)*360")
+  field(FLNK, "$(S):control")
+}
+
+record(ao, "$(S):P")
+{
+  field(DESC, "Proportional gain")
+  field(PREC, "1")
+  field(DOL,  "0.1")
+  field(PINI, "YES")
+}
+
+record(calc, "$(S):control")
+{
+  field(DESC, "P control")
+  field(INPA, "$(S):error")
+  field(INPB, "$(S):P")
+  field(EGU,  "V")
+  field(PREC, "1")
+  field(CALC, "MAX(-12,MIN(12, B*A))")
+  field(FLNK, "$(S):voltage")
+}
+
+# How do we get the 'control' value into the 'voltage'?
+#
+# Option 1:
+# Change 'control' into a 'calcout' record and add
+#   field(OUT,  "$(S):voltage")
+# To enable/disable, we could change the error.SCAN
+#
+# Option 2:
+# Patch 'voltage' record to read 'control' as the desired output link,
+# enable/disable via OMSL
+record("*", "$(S):voltage")
+{
+  field(DOL,  "$(S):control")
+  field(OMSL, "closed_loop")
+}

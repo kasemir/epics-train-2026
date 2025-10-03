@@ -30,6 +30,14 @@
     <x>70</x>
     <y>50</y>
   </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box</name>
+    <pv_name>demo:voltage.OMSL</pv_name>
+    <x>190</x>
+    <y>50</y>
+    <width>130</width>
+    <height>20</height>
+  </widget>
   <widget type="scrollbar" version="2.0.0">
     <name>Scrollbar</name>
     <pv_name>demo:voltage</pv_name>
@@ -82,5 +90,24 @@
     <pv_name>demo:setpoint</pv_name>
     <x>70</x>
     <y>300</y>
+  </widget>
+  <widget type="scrollbar" version="2.0.0">
+    <name>Scrollbar_1</name>
+    <pv_name>demo:setpoint</pv_name>
+    <y>330</y>
+    <width>180</width>
+    <tooltip></tooltip>
+    <bar_length>1.0</bar_length>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>P:</text>
+    <y>360</y>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_3</name>
+    <pv_name>demo:P</pv_name>
+    <x>70</x>
+    <y>360</y>
   </widget>
 </display>
