@@ -1,0 +1,31 @@
+#!/bin/bash
+#
+# Disable name server
+#
+# ChannelAccess (CAJ) calls java.net.InetAddress.getLocalHost like this
+# on the first received search reply:
+#
+#    at java.net.Inet6AddressImpl.lookupAllHostAddr(java.base@21.0.8/Native Method)
+#    ...
+#    at java.net.InetAddress.getLocalHost(java.base@21.0.8/InetAddress.java:1931)
+#    at com.cosylab.epics.caj.impl.requests.HostNameRequest.getHostName(HostNameRequest.java:42)
+#    ...
+#    at com.cosylab.epics.caj.CAJContext.searchResponse(CAJContext.java:1634)
+#
+# Usually, that's quick, but if you find that the first connection takes >10 seconds, and
+#
+#    host 127.0.0.1
+#
+# is much slower than
+#
+#   getent hosts 127.0.0.1
+#
+# you can improve this by disabling DNS
+
+# Disable the network manager which would otherwise update /etc/resolv.conf
+sudo systemctl stop NetworkManager
+
+# Disable all listed name servers
+sudo sed -i 's/^nameserver /#nameserver /g' /etc/resolv.conf
+
+# To revert, reboot, or un-comment the nameservers in /etc/resolv.conf
