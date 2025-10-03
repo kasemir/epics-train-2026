@@ -1,3 +1,8 @@
+# Disable firewall to allow broadcasts,
+# and we're in a VBox sandbox anyway
+sudo systemctl stop firewalld
+sudo systemctl disable firewalld
+
 # For epics base
 sudo dnf install -y perl
 sudo dnf install -y readline-devel
