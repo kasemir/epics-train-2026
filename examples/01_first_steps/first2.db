@@ -1,0 +1,9 @@
+# See first1.db
+record(calc, "$(S):ramp")
+{
+   field(SCAN, "1 second")
+   field(INPA, "$(S):ramp")
+   field(INPB, "$(S):limit")
+   field(CALC, "A<B ? A+1 : 0")
+}
+

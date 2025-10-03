@@ -1,0 +1,20 @@
+# Run as
+#       softIoc -m S=demo -d first.db
+#
+# A ramp from 0 to 'limit', were limit
+# can be configured via a separate record
+record(ao, "$(S):limit")
+{
+   field(DRVH, "100")
+   field(DOL,  "10")
+   field(PINI, "YES")
+}
+
+record(calc, "$(S):ramp")
+{
+   field(SCAN, "1 second")
+   field(INPA, "$(S):ramp")
+   field(INPB, "$(S):limit")
+   field(CALC, "A<B ? A+1 : 0")
+}
+

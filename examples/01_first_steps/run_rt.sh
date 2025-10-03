@@ -8,10 +8,20 @@ then
 	exit
 fi
 
-# Enable thread priorities, lock memory
+# As 'root', we can Enable thread priorities & lock memory
+# From `man ulimit`:
+#   -r     The maximum real-time scheduling priority
+#   -e     The maximum scheduling priority ("nice")
+#   -l     The maximum size that may be locked into memory
 ulimit -r 99 -e 99 -l 10000000000
 
+# When we now run the IOC, EPICS will notice that thread priorities
+# are enabled and use them.
+# We could do this as root:
+#    softIoc ...
+# but it's better practice to run IOCs as a non-root user,
+# so switch back to `epics-dev` for running the IOC
 cd /home/epics-dev/training/examples/01_first_steps
-su epics-dev -c "/home/epics-dev/training/bin/softIoc -m S=demo -d very_first.db"
+su epics-dev -c "/home/epics-dev/training/bin/softIoc -m S=training -d very_first.db"
 
 

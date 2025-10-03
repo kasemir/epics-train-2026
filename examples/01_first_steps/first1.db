@@ -1,0 +1,11 @@
+# Run as 
+#   softIoc -m S=demo -d first1.db -d first2.db 
+# or as separate
+#   softIoc -m S=demo -d first1.db
+#   softIoc -m S=demo -d first2.db 
+record(ao, "$(S):limit")
+{
+   field(DRVH, "100")
+   field(DOL,  "10")
+   field(PINI, "YES")
+}
