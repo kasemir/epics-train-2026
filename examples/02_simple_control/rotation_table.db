@@ -1,0 +1,38 @@
+
+record(ao, "$(S):voltage")
+{
+  field(DESC, "Rotation table motor voltage")
+  field(EGU,  "V")
+  field(PREC, "1")
+  field(DRVL, "-12")
+  field(DRVH, "12")
+  field(DOL,  "0")
+  field(PINI, "YES")
+}
+
+record(calc, "$(S):angle_raw")
+{
+  field(DESC, "Angle of the rotation table")
+  field(INPA, "$(S):angle")
+  field(INPB, "$(S):voltage")
+  field(INPC, "3.0")
+  field(EGU,  "deg")
+  field(PREC, "1")
+  field(LOPR, "-180")
+  field(HOPR, "180")
+  field(SCAN, ".2 second")
+  field(CALC, "A+B*C")
+  field(FLNK, "$(S):angle")
+}
+
+record(calc, "$(S):angle")
+{
+  field(DESC, "Angle in +-180 deg range")
+  field(INPA, "$(S):angle_raw")
+  field(EGU,  "deg")
+  field(PREC, "1")
+  field(LOPR, "-180")
+  field(HOPR, "180")
+  field(CALC, "A-NINT(A/360)*360")
+}
+
