@@ -1,0 +1,5 @@
+#!/bin/sh
+
+DBD=/home/epics-dev/training/tools/base/dbd/softIoc.dbd
+
+java -cp /home/epics-dev/training/tools/vdct/VisualDCT.jar com.cosylab.vdct.VisualDCT $DBD "$@" &
