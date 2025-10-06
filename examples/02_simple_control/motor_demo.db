@@ -1,0 +1,39 @@
+
+record(ao, "$(S):voltage")
+{
+  field(DESC, "Motor voltage")
+  field(EGU,  "V")
+  field(PREC, "1")
+  field(DRVL, "-12")
+  field(DRVH, "12")
+  field(DOL,  "0")
+  field(PINI, "YES")
+}
+
+record(ai, "$(S):sim_time")
+{
+  field(DESC, "Simulation time base")
+  field(DTYP, "Soft Timestamp")
+  field(SCAN, ".2 second")
+}
+
+record(calc, "$(S):speed")
+{
+  field(DESC, "Simulated motor speed")
+  field(INPA, "$(S):voltage")
+  # Motor constand, rpm/V
+  field(INPB, "500.0")
+  field(INPC, "$(S):sim_time")
+  # Simulated disturbance amplitude factor
+  field(INPD, "0.1")
+  # Simulated disturbance period
+  field(INPE, "10.0")
+  field(EGU,  "rpm")
+  field(PREC, "1")
+  field(SCAN, ".2 second")
+  # speed = voltage * motor constant
+  # If abs(voltage) is >= 1,
+  # add a sinoidal disturbance
+  field(CALC, "A*B+(ABS(A)<1?0:A*B*D*SIN(2*PI*C/E))")
+}
+

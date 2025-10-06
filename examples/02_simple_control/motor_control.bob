@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Motor</name>
+  <width>900</width>
+  <height>400</height>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>Motor</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>550</width>
+    <height>31</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Voltage:</text>
+    <y>50</y>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry</name>
+    <pv_name>demo:voltage</pv_name>
+    <x>70</x>
+    <y>50</y>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box</name>
+    <pv_name>demo:voltage.OMSL</pv_name>
+    <x>190</x>
+    <y>50</y>
+    <width>130</width>
+    <height>20</height>
+  </widget>
+  <widget type="stripchart" version="2.1.0">
+    <name>Strip Chart</name>
+    <x>330</x>
+    <y>50</y>
+    <width>570</width>
+    <height>350</height>
+    <show_toolbar>false</show_toolbar>
+    <y_axes>
+      <y_axis>
+        <title></title>
+        <autoscale>false</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>-6000.0</minimum>
+        <maximum>6000.0</maximum>
+        <show_grid>false</show_grid>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>$(traces[0].y_pv)</name>
+        <y_pv>demo:speed</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>$(traces[1].y_pv)</name>
+        <y_pv>demo:setpoint</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="255" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="scrollbar" version="2.0.0">
+    <name>Scrollbar</name>
+    <pv_name>demo:voltage</pv_name>
+    <y>80</y>
+    <width>180</width>
+    <tooltip></tooltip>
+    <bar_length>1.0</bar_length>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <description>Stop</description>
+        <pv_name>$(pv_name)</pv_name>
+        <value>0</value>
+      </action>
+    </actions>
+    <pv_name>demo:voltage</pv_name>
+    <x>190</x>
+    <y>80</y>
+    <width>60</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>Speed:</text>
+    <y>120</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>demo:speed</pv_name>
+    <x>70</x>
+    <y>120</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>Setpoint:</text>
+    <y>150</y>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_3</name>
+    <pv_name>demo:setpoint</pv_name>
+    <x>70</x>
+    <y>150</y>
+  </widget>
+  <widget type="scrollbar" version="2.0.0">
+    <name>Scrollbar_1</name>
+    <pv_name>demo:setpoint</pv_name>
+    <y>180</y>
+    <width>180</width>
+    <tooltip></tooltip>
+    <bar_length>1.0</bar_length>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>Int. Gain:</text>
+    <y>210</y>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_4</name>
+    <pv_name>demo:I</pv_name>
+    <x>70</x>
+    <y>210</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>Error Int.:</text>
+    <y>240</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>demo:error_sum</pv_name>
+    <x>70</x>
+    <y>240</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>Int. Limit:</text>
+    <y>270</y>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_5</name>
+    <pv_name>demo:error_limit</pv_name>
+    <x>70</x>
+    <y>270</y>
+  </widget>
+</display>
