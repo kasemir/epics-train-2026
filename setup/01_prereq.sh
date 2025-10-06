@@ -10,6 +10,12 @@ sudo dnf install -y readline-devel
 # For sequencer
 sudo dnf install -y re2c
 
+# For asyn (skipped with disabled VXI11 support)
+# sudo dnf install -y rpcgen libtirpc-devel
+
+# For stream
+sudo dnf install -y pcre-devel
+
 # For CSS
 sudo dnf install -y java-21-openjdk-devel
 

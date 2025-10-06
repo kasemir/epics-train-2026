@@ -1,3 +1,4 @@
+echo "== vdct"
 cd ~/training/tools
 rm -rf vdct
 wget https://github.com/epics-extensions/VisualDCT/releases/download/v2.8.3/VisualDCT-2.8.3-distribution.tar.gz
