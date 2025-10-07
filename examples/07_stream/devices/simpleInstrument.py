@@ -83,8 +83,19 @@ class Server(socketserver.ThreadingMixIn, socketserver.TCPServer):
         socketserver.TCPServer.__init__(self, server_address, RequestHandlerClass)
 
 server = Server(('0.0.0.0', 24742), DummyDevice)
-print("Serving on TCP 24742")
-print("Terminate with Ctrl-C")
+print("""Serving on TCP 24742
+
+Commands:
+   *IDN?
+   ON 0
+   ON 1
+   VOLTS 5.0
+   ON?
+   VOLTS?
+   CURR?
+   LOAD?
+
+Terminate with Ctrl-C""")
 try:
     server.serve_forever()
 except KeyboardInterrupt:

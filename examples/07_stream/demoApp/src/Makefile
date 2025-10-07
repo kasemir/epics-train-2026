@@ -19,12 +19,13 @@ DBD += demo.dbd
 # demo.dbd will be made up from these files:
 demo_DBD += base.dbd
 
-# Stream
+## Stream ####################
 demo_DBD += stream.dbd
 demo_DBD += asyn.dbd
 demo_DBD += drvAsynIPPort.dbd
 demo_LIBS += asyn
 demo_LIBS += stream
+##############################
 
 # demo_registerRecordDeviceDriver.cpp derives from demo.dbd
 demo_SRCS += demo_registerRecordDeviceDriver.cpp
