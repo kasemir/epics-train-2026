@@ -1,0 +1,33 @@
+# list of users
+UAG(normUsers) {training, epics-dev}
+UAG(expertUsers) {expert}
+
+# If you want to limit access to a list of hosts,
+# list them here and enable the HAG(...) below.
+# With the VM, we're not sure what our host name will be...
+HAG(normHosts) {training, training.epics, training-VirtualBox}
+
+ASG(DEFAULT) {
+    RULE(1,READ)
+    RULE(1,WRITE) {
+        UAG(normUsers)
+        # HAG(normHosts)
+    }
+}
+
+ASG(EXPERT) {
+    INPA($(S):accessState)
+
+    RULE(1,READ)
+
+    RULE(1,WRITE) {
+        UAG(expertUsers)
+        # HAG(normHosts)
+    }
+
+    RULE(1,WRITE) {
+        UAG(normUsers)
+        # HAG(normHosts)
+        CALC("A=1")
+    }
+}
