@@ -19,9 +19,16 @@ DBD += demo.dbd
 # demo.dbd will be made up from these files:
 demo_DBD += base.dbd
 
-# Autosave
+## Autosave ##################
 demo_DBD += asSupport.dbd
 demo_LIBS += autosave
+
+## PVXS ######################
+ifneq ($(PVXS),)
+    demo_DBD += pvxsIoc.dbd
+    demo_LIBS += pvxsIoc
+    demo_LIBS += pvxs
+endif
 
 # demo_registerRecordDeviceDriver.cpp derives from demo.dbd
 demo_SRCS += demo_registerRecordDeviceDriver.cpp

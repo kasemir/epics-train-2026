@@ -3,8 +3,11 @@ apache-maven
 asyn
 autosave
 base
+EPICSV4Sandbox
 jdk
+p4p
 phoebus
+pvxs
 RELEASE.local
 sequencer
 StreamDevice-master

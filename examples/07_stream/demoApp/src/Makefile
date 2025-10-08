@@ -27,6 +27,13 @@ demo_LIBS += asyn
 demo_LIBS += stream
 ##############################
 
+## PVXS ######################
+ifneq ($(PVXS),)
+    demo_DBD += pvxsIoc.dbd
+    demo_LIBS += pvxsIoc
+    demo_LIBS += pvxs
+endif
+
 # demo_registerRecordDeviceDriver.cpp derives from demo.dbd
 demo_SRCS += demo_registerRecordDeviceDriver.cpp
 
