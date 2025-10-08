@@ -1,9 +1,11 @@
+# Run as
+#   softIoc -m S=demo -d motor_demo.db
 
 record(ao, "$(S):voltage")
 {
   field(DESC, "Motor voltage")
   field(EGU,  "V")
-  field(PREC, "1")
+  field(PREC, "2")
   field(DRVL, "-12")
   field(DRVH, "12")
   field(DOL,  "0")

@@ -1,3 +1,5 @@
+# Run as 
+#   softIoc -m S=demo -d rotation_table.db
 
 record(ao, "$(S):voltage")
 {
