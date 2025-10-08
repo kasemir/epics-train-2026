@@ -16,6 +16,13 @@ sudo dnf install -y re2c
 # For stream
 sudo dnf install -y pcre-devel
 
+# For PVXS
+sudo dnf install -y libevent-devel
+
+# For P4P
+sudo dnf install -y python3-pip
+sudo dnf install -y python3-devel
+
 # For CSS
 sudo dnf install -y java-21-openjdk-devel
 
