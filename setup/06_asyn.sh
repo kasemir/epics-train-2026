@@ -1,5 +1,5 @@
 echo "== Asyn"
-cd ~/training/tools/
+cd /ics/training/tools/
 rm -rf asyn
 
 # Earlier releases need rpcgen and libtirpc-devel, which

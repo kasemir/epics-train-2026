@@ -3,6 +3,10 @@
 sudo systemctl stop firewalld
 sudo systemctl disable firewalld
 
+# Create 'expert' user for ASDG tests etc.
+sudo /sbin/adduser expert
+echo 'expert:$expert' | sudo chpasswd
+
 # For epics base
 sudo dnf install -y perl
 sudo dnf install -y readline-devel
@@ -30,5 +34,5 @@ sudo dnf install -y java-21-openjdk-devel
 sudo dnf install -y htop
 
 # Shell settings
-sudo cp $HOME/training/tools/training_profile.sh /etc/profile.d
+sudo cp /ics/training/setup/training_profile.sh /etc/profile.d
 

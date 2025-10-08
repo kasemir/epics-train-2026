@@ -1,6 +1,6 @@
 echo "== P4P"
 
-cd ~/training/tools
+cd /ics/training/tools
 rm -rf p4p
 wget https://github.com/epics-base/p4p/archive/refs/heads/master.zip
 unzip master.zip 
