@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+# Enable name server
+
+sudo sed -i 's/^#nameserver /nameserver /g' /etc/resolv.conf
+
+sudo systemctl start NetworkManager
+
