@@ -1,16 +1,18 @@
 record(calc, "$(S):ramp")
 {
-  field(CALC, "(A<B)?(A+C):0")
   field(INPA, "$(S):ramp")
-  field(SCAN, "1 second")
   field(INPB, "$(S):limit")
   field(INPC, "$(S):step")
+  field(CALC, "(A<B)?(A+C):0")
+  field(PREC, "2")
+  field(SCAN, "1 second")
 }
 
 record(ai, "$(S):limit")
 {
   info(autosaveFields, "VAL")
   field(INP,  "10")
+  field(PREC, "2")
   field(PINI, "YES")
 }
 
@@ -18,5 +20,6 @@ record(ai, "$(S):step")
 {
   info(autosaveFields, "VAL")
   field(INP,  "1")
+  field(PREC, "2")
   field(PINI, "YES")
 }
