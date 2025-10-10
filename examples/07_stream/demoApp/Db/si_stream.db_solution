@@ -6,6 +6,8 @@ record(ao, "SI:Volt")
   field(OUT,  "@si.proto_solution setVolt SI")
   field(EGU,  "V")
   field(PREC, "2")
+  field(DRVL, "-10")
+  field(DRVH, "10")
 }
 
 record(ai, "SI:Amp")
