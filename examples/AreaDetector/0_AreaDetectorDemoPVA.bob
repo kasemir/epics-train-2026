@@ -27,9 +27,9 @@
     <name>Action Button</name>
     <actions>
       <action type="open_display">
+        <description>Plugins</description>
         <file>commonPlugins.opi</file>
         <target>replace</target>
-        <description>Plugins</description>
       </action>
     </actions>
     <x>120</x>
@@ -40,9 +40,9 @@
     <name>Action Button_1</name>
     <actions>
       <action type="open_display">
+        <description>Detector</description>
         <file>simDetector.opi</file>
         <target>replace</target>
-        <description>Detector</description>
       </action>
     </actions>
     <x>10</x>
@@ -123,6 +123,7 @@
     <name>Action Button_2</name>
     <actions>
       <action type="write_pv">
+        <description>Write PV</description>
         <pv_name>$(P)$(R)Acquire</pv_name>
         <value>0</value>
       </action>
@@ -142,6 +143,7 @@
     <name>Action Button_3</name>
     <actions>
       <action type="write_pv">
+        <description>Write PV</description>
         <pv_name>$(P)$(R)Acquire</pv_name>
         <value>1</value>
       </action>

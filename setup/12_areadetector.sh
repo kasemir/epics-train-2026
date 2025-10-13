@@ -4,7 +4,6 @@ sudo dnf install libxml2-devel
 sudo dnf install zlib-devel
 
 cd /ics/training/tools
-
 rm -rf ADCore
 wget https://github.com/areaDetector/ADCore/archive/refs/tags/R3-13.zip
 unzip R3-13.zip
@@ -19,6 +18,7 @@ make
 echo ADCORE=`pwd` >>../RELEASE.local
 cd ..
 
+cd /ics/training/tools
 rm -rf ADSimDetector
 wget https://github.com/areaDetector/ADSimDetector/archive/R2-11.zip
 unzip R2-11.zip 
@@ -26,7 +26,8 @@ mv ADSimDetector-R2-11 ADSimDetector
 rm R2-11.zip 
 cd ADSimDetector
 echo 'include $(TOP)/../RELEASE.local' >> configure/RELEASE
-echo 'include $(TOP)/../../../RELEASE.local' >> iocs/simDetectorIOC/configure/RELEASE
+echo 'include $(TOP)/../../../RELEASE.local'   >> iocs/simDetectorIOC/configure/RELEASE
+echo 'include $(ADCORE)/configure/CONFIG_SITE' >> iocs/simDetectorIOC/configure/CONFIG_SITE
 if [ `uname -m` == 'aarch64' ]
 then
    sed -i 's/linux-x86_64/linux-aarch64/' iocs/simDetectorIOC/iocBoot/iocSimDetector/Makefile
@@ -35,10 +36,4 @@ fi
 make
 make -C iocs/simDetectorIOC
 cp iocs/simDetectorIOC/iocBoot/iocSimDetector/envPaths iocs/simDetectorIOC/iocBoot/iocSimDetector/envPaths.linux
-
-#wget https://github.com/areaDetector/pvaDriver/archive/refs/tags/R1-5.zip
-#unzip R1-5.zip
-#rm R1-5.zip
-#mv pvaDriver-R1-5/* areaDetector/pvaDriver/
-#rm -rf pvaDriver-R1-5
 
