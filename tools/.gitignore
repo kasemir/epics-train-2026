@@ -2,7 +2,10 @@
 apache-maven
 asyn
 autosave
+ADCore
+ADSimDetector
 base
+busy
 EPICSV4Sandbox
 jdk
 p4p
@@ -12,7 +15,5 @@ RELEASE.local
 sequencer
 StreamDevice
 vdct
-
-
 
 

@@ -120,7 +120,7 @@ XML2_EXTERNAL = NO
 
 # ZLIB is required for the NDFileHDF5 and NDFileNexus plugins.  
 # This may be optional in the future.
-WITH_ZLIB     = NO
+WITH_ZLIB     = YES
 ZLIB_EXTERNAL = NO
 #ZLIB_INCLUDE =
 #ZLIB_LIB     =
