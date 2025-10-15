@@ -3,17 +3,18 @@
   <group>
     <name>Demo</name>
     <channel>
-      <name>freddy</name>
+      <name>epics-dev:setpoint</name>
       <monitor/>
       <period>0.1</period>
     </channel>
     <channel>
-      <name>sim://noiseWaveform(0,10,100,10)</name>
+      <name>epics-dev:tank</name>
       <monitor/>
       <period>0.1</period>
+      <delta>1.0</delta>
     </channel>
     <channel>
-      <name>sim://sine(0, 10, 50, 0.1)</name>
+      <name>epics-dev:heat_V</name>
       <monitor/>
       <period>0.1</period>
       <delta>1.0</delta>
