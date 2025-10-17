@@ -1,7 +1,7 @@
 echo "== Area Detector"
 
-sudo dnf install libxml2-devel
-sudo dnf install zlib-devel
+sudo dnf install -y libxml2-devel
+sudo dnf install -y zlib-devel
 
 cd /ics/training/tools
 rm -rf ADCore
