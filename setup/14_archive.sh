@@ -8,9 +8,10 @@ sudo systemctl start mariadb
 # Interactive setup, doesn't seem to do more than set PW
 # sudo /usr/bin/mysql_secure_installation"
 
-# Set root PW
-sudo mysql <<EOF
-ALTER USER 'root'@'localhost' IDENTIFIED BY '$root';
+
+# Initial root PW is empty, change to '$root'
+mysql -u root <<EOF
+ALTER USER 'root'@'localhost' IDENTIFIED BY '\$root';
 FLUSH PRIVILEGES;
 EOF
 
