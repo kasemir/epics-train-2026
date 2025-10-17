@@ -1,0 +1,14 @@
+#!/bin/sh
+
+echo "***************************"
+echo "** Try 'pvinfo neutrons'  *"
+echo "***************************"
+echo
+echo
+
+if [ $# -gt 0 ]
+then
+    /ics/training/tools/EPICSV4Sandbox/neutronsDemoServer/bin/*/neutronServerMain "$@"
+else
+    /ics/training/tools/EPICSV4Sandbox/neutronsDemoServer/bin/*/neutronServerMain -d 0.5 -r
+fi

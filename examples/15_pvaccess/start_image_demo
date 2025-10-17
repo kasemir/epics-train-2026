@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "************************"
+echo "** Try 'pvinfo IMAGE'  *"
+echo "************************"
+echo
+echo
+
+/ics/training/tools/EPICSV4Sandbox/ntndarrayServer/bin/*/ntndarrayServerMain IMAGE
+
