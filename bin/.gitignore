@@ -11,5 +11,12 @@ pvinfo
 pvlist
 pvmonitor
 pvput
+pvxcall
+pvxget
+pvxinfo
+pvxlist
+pvxmonitor
+pvxput
 softIoc
 softIocPVA
+softIocPVX
