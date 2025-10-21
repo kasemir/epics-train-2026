@@ -1,0 +1,12 @@
+#!../../bin/linux-aarch64/busy
+
+< envPaths
+
+## Register all support components
+dbLoadDatabase "../../dbd/busy.dbd"
+busy_registerRecordDeviceDriver(pdbbase) 
+
+## Load record instances
+dbLoadRecords("../../db/busy_demo.db")
+
+iocInit()
