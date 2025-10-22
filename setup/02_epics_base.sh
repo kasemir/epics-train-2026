@@ -1,6 +1,6 @@
-echo "== Creating training/tools"
-mkdir -p /ics/training/tools
-cd /ics/training/tools
+echo "== Creating /ics/tools"
+mkdir -p /ics/tools
+cd /ics/tools
 
 echo "== EPICS base"
 rm -rf base

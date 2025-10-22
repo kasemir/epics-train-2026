@@ -4,7 +4,7 @@
 # to the absolute installation path
 # TOP="."
 
-TOP=/ics/training/tools/phoebus/phoebus-product/target
+TOP=/ics/tools/phoebus/phoebus-product/target
 JAR=`echo ${TOP}/product-*.jar`
 
 
@@ -21,7 +21,7 @@ JDK_JAVA_OPTIONS+=" -DCA_DISABLE_REPEATER=true "
 # Disable warnings
 JDK_JAVA_OPTIONS+=" -Dnashorn.args=--no-deprecation-warning "
 
-OPT="-settings /ics/training/tools/css_training.ini"
+OPT="-settings /ics/tools/css_training.ini"
 
 if [ "x$1" == "x-main"  -o  "x$1" == "x-help" ]
 then

@@ -3,7 +3,7 @@ echo "== Area Detector"
 sudo dnf install -y libxml2-devel
 sudo dnf install -y zlib-devel
 
-cd /ics/training/tools
+cd /ics/tools
 rm -rf ADCore
 wget https://github.com/areaDetector/ADCore/archive/refs/tags/R3-13.zip
 unzip R3-13.zip
@@ -11,14 +11,14 @@ mv ADCore-R3-13 ADCore
 rm R3-13.zip
 cd ADCore
 echo 'include $(TOP)/../RELEASE.local' >> configure/RELEASE
-cp /ics/training/setup/areadetector_configure/CONFIG_SITE               configure
-cp /ics/training/setup/areadetector_configure/commonPlugins.cmd         iocBoot
-cp /ics/training/setup/areadetector_configure/commonPlugin_settings.req iocBoot
+cp /ics/setup/areadetector_configure/CONFIG_SITE               configure
+cp /ics/setup/areadetector_configure/commonPlugins.cmd         iocBoot
+cp /ics/setup/areadetector_configure/commonPlugin_settings.req iocBoot
 make
 echo ADCORE=`pwd` >>../RELEASE.local
 cd ..
 
-cd /ics/training/tools
+cd /ics/tools
 rm -rf ADSimDetector
 wget https://github.com/areaDetector/ADSimDetector/archive/R2-11.zip
 unzip R2-11.zip 

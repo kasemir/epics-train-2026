@@ -34,5 +34,5 @@ sudo dnf install -y java-21-openjdk-devel
 sudo dnf install -y htop
 
 # Shell settings
-sudo cp /ics/training/setup/training_profile.sh /etc/profile.d
+sudo cp /ics/setup/training_profile.sh /etc/profile.d
 

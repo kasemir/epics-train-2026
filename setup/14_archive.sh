@@ -16,7 +16,7 @@ FLUSH PRIVILEGES;
 EOF
 
 # Install archive tables
-mysql -u root -p'$root' </ics/training/tools/phoebus/services/archive-engine/dbd/MySQL.dbd
+mysql -u root -p'$root' </ics/tools/phoebus/services/archive-engine/dbd/MySQL.dbd
 
 # Check for demo channels
 mysql -u report -p'$report' \

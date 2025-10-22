@@ -1,6 +1,6 @@
 echo "== PVXS"
 
-cd /ics/training/tools
+cd /ics/tools
 rm -rf pvxs
 wget https://github.com/epics-base/pvxs/archive/refs/heads/master.zip
 unzip master.zip 
@@ -15,6 +15,6 @@ do
     ln -s `pwd`/bin/*/$cmd ../../bin
 done
 
-
+pvxinfo -h
 
 

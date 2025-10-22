@@ -1,5 +1,5 @@
 echo "## EPICS V4 Sandbox"
-cd /ics/training/tools
+cd /ics/tools
 rm -rf EPICSV4Sandbox
 wget https://github.com/kasemir/EPICSV4Sandbox/archive/refs/heads/master.zip
 unzip master.zip 

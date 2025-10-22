@@ -11,6 +11,7 @@ jdk
 p4p
 phoebus
 pvxs
+pyepics
 RELEASE.local
 sequencer
 StreamDevice

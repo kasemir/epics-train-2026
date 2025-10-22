@@ -1,5 +1,5 @@
 echo "== Stream"
-cd /ics/training/tools/
+cd /ics/tools/
 rm -rf StreamDevice
 
 wget https://github.com/paulscherrerinstitute/StreamDevice/archive/master.zip
@@ -10,4 +10,6 @@ cd StreamDevice
 echo '-include $(TOP)/../RELEASE.local' >configure/RELEASE
 make
 echo "STREAM=`pwd`" >> ../RELEASE.local
+cat ../RELEASE.local
+
 

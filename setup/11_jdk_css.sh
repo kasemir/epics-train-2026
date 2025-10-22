@@ -1,4 +1,4 @@
-cd /ics/training/tools
+cd /ics/tools
 
 echo "== MVN"
 rm -rf apache-maven
@@ -7,7 +7,7 @@ unzip apache-maven-*.zip
 rm apache-maven-*.zip
 mv apache-maven-* apache-maven
 
-export M2_HOME=/ics/training/tools/apache-maven
+export M2_HOME=/ics/tools/apache-maven
 export PATH="$M2_HOME/bin:$PATH"
 mvn -version
 

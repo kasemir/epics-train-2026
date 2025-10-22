@@ -1,5 +1,5 @@
 #!/bin/sh
 
-DBD=/ics/training/tools/base/dbd/softIoc.dbd
+DBD=/ics/tools/base/dbd/softIoc.dbd
 
-java -cp /ics/training/tools/vdct/VisualDCT.jar com.cosylab.vdct.VisualDCT $DBD "$@" &
+java -cp /ics/tools/vdct/VisualDCT.jar com.cosylab.vdct.VisualDCT $DBD "$@" &

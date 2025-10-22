@@ -1,5 +1,5 @@
 echo "== sequencer"
-cd /ics/training/tools
+cd /ics/tools
 rm -rf sequencer
 wget https://github.com/epics-modules/sequencer/archive/refs/tags/R2-2-9.tar.gz
 tar vzxf R2-2-9.tar.gz
@@ -9,4 +9,5 @@ cd sequencer
 make
 echo "SNCSEQ="`pwd` >> ../RELEASE.local
 cd ..
+cat RELEASE.local
 

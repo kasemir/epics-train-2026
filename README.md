@@ -60,12 +60,11 @@ Add the training setup to the VM-based Linux:
 
     sudo dnf install -y git
 
-    sudo mkdir /ics
-    sudo chown epics-dev /ics
-    cd /ics
+    cd
     git clone https://github.com/kasemir/epics-train-2026.git training
+    sudo mv training /ics
 
-    cd /ics/training/setup
+    cd /ics/setup
     ./setup.sh
 
 

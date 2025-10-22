@@ -1,5 +1,5 @@
 #!/bin/sh
 
-cd /ics/training/tools/phoebus/services/archive-engine
+cd /ics/tools/phoebus/services/archive-engine
 ./archive-engine.sh "$@"
 

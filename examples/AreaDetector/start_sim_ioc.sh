@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd /ics/training/tools/ADSimDetector/iocs/simDetectorIOC/iocBoot/iocSimDetector
+cd /ics/tools/ADSimDetector/iocs/simDetectorIOC/iocBoot/iocSimDetector
 
 ./start_epics
 

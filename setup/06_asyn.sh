@@ -1,5 +1,5 @@
 echo "== Asyn"
-cd /ics/training/tools/
+cd /ics/tools/
 rm -rf asyn
 
 # Earlier releases need rpcgen and libtirpc-devel, which
@@ -16,4 +16,6 @@ sed -i 's/TIRPC=YES/TIRPC=NO/' configure/CONFIG_SITE.Common.linux-x86_64
 
 make
 echo "ASYN=`pwd`" >> ../RELEASE.local
+cat ../RELEASE.local
+
 
