@@ -51,7 +51,7 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_1</name>
-    <text>1) cd /ics/training/examples/AreaDetector
+    <text>1) cd /ics/examples/AreaDetector
    ./start_sim_ioc.sh
 2) Open Detector page
 3) Press Connect.. "Start"

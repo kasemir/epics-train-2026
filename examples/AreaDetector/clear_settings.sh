@@ -1,4 +1,4 @@
 #!/bin/sh
 
-rm -f /ics/training/tools/ADSimDetector/iocs/simDetectorIOC/iocBoot/iocSimDetector/autosave/*
+rm -f /ics/tools/ADSimDetector/iocs/simDetectorIOC/iocBoot/iocSimDetector/autosave/*
 
