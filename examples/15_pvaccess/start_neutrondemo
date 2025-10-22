@@ -8,7 +8,7 @@ echo
 
 if [ $# -gt 0 ]
 then
-    /ics/training/tools/EPICSV4Sandbox/neutronsDemoServer/bin/*/neutronServerMain "$@"
+    /ics/tools/EPICSV4Sandbox/neutronsDemoServer/bin/*/neutronServerMain "$@"
 else
-    /ics/training/tools/EPICSV4Sandbox/neutronsDemoServer/bin/*/neutronServerMain -d 0.5 -r
+    /ics/tools/EPICSV4Sandbox/neutronsDemoServer/bin/*/neutronServerMain -d 0.5 -r
 fi
