@@ -1,0 +1,8 @@
+
+record(ao, "hello")
+{
+    field(DTYP, "pydev")
+    field(OUT,  "@print('Hello from PyDevice!')")
+    field(SCAN, "5 second")
+}
+
