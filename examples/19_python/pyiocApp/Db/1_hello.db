@@ -2,7 +2,13 @@
 record(ao, "hello")
 {
     field(DTYP, "pydev")
-    field(OUT,  "@print('Hello from PyDevice!')")
+    field(OUT,  "@print('Hello from PyDevice, it is ' + str(datetime.now()))")
     field(SCAN, "5 second")
+}
+
+record(ao, "delay")
+{
+    field(DTYP, "pydev")
+    field(OUT,  "@sleep(VAL)")
 }
 

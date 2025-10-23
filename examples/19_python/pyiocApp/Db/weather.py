@@ -1,6 +1,10 @@
 # Python program to find current weather details of any city
 # using openweathermap api
- 
+#
+# For tests, run as
+#
+#     python weather.py
+
 # import required modules
 import requests, json
 from pprint import pprint
@@ -12,9 +16,6 @@ default_api_key = 'daf4cf281052dc65e4728f7de616032c'
 base_url = 'http://api.openweathermap.org/data/2.5/weather?'
 
 def getWeather(city='Paris', units='imperial', api_key=default_api_key, debug=False):
-    print("City: " + str(city))
-    print("Units:" + str(units))
-    print("API:  " + str(api_key))
     url = f'{base_url}appid={api_key}&q={city}&units={units}'
     if debug:
         print(f'Fetching data from {url}')
@@ -24,7 +25,8 @@ def getWeather(city='Paris', units='imperial', api_key=default_api_key, debug=Fa
     if int(response['cod']) != 200:
         raise UserWarning(f'Received invalid response {response["cod"]}')
     
-    #pprint(response)
+    if debug:
+        pprint(response)
 
     weather = {
         'temperature': response['main']['temp'],
