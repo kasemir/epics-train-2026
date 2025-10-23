@@ -1,3 +1,4 @@
+#!/bin/env python3
 from p4p.client.thread import Context
 from time import sleep
 
@@ -18,3 +19,4 @@ for i in range(10):
     sleep(1)
 
 pva.put('epics-dev:setpoint', 30)
+

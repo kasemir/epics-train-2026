@@ -1,3 +1,4 @@
+#!/bin/env python3
 # Example for python server that would be easier as "CALC" record...
 import time
 from p4p.nt import NTScalar

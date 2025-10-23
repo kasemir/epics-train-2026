@@ -1,3 +1,4 @@
+#!/bin/env python3
 # Read PV from 'makeBaseApp.pl -t example'
 # to check if circle.x and .y are on circle
 

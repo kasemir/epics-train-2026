@@ -1,3 +1,4 @@
+#!/bin/env python3
 from p4p.client.thread import Context
 from time import sleep
 

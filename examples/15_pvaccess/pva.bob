@@ -29,7 +29,7 @@
     <name>Action Button_29</name>
     <actions>
       <action type="open_display">
-	      <file>/ics/training/examples/fishtank/heater.bob</file>
+	      <file>/ics/examples/fishtank/heater.bob</file>
         <macros>
           <USER>epics-dev</USER>
         </macros>
@@ -47,7 +47,7 @@
     <name>Action Button_30</name>
     <actions>
       <action type="open_display">
-	      <file>/ics/training/examples/fishtank/heater.bob</file>
+	      <file>/ics/examples/fishtank/heater.bob</file>
         <macros>
           <USER>ca://epics-dev</USER>
         </macros>
@@ -65,7 +65,7 @@
     <name>Action Button_31</name>
     <actions>
       <action type="open_display">
-	      <file>/ics/training/examples/fishtank/heater.bob</file>
+	      <file>/ics/examples/fishtank/heater.bob</file>
         <macros>
           <USER>pva://epics-dev</USER>
         </macros>

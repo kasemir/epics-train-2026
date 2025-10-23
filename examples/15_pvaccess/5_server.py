@@ -1,3 +1,4 @@
+#!/bin/env python3
 # Example for custom data type that might be harder to create in IOC
 import time
 from p4p import Type, Value
