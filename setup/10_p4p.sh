@@ -12,6 +12,9 @@ make
 # In the generated pvagw, may have to change '#!/usr/bin/python'
 # to use .../python3
 
+rm -f /ics/bin/pvagw
+ln -s `pwd`/bin/*/pvagw /ics/bin
+
 export PYTHONPATH=`echo /ics/tools/p4p/python*/linux-*`
 python -c 'import p4p'
 
