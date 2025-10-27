@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd /ics/tools/phoebus/services/alarm-server
+./alarm-server.sh "$@"
+
+
