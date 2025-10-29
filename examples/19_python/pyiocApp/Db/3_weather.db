@@ -24,10 +24,15 @@ record(pycalc, "$(user):weather:refresh")
     field(FTA,  "STRING")
     field(FTB,  "STRING")
     field(FTC,  "STRING")
-    field(CALC, "weather=getWeather('A', 'B', 'C', TPRO==1)")
+    field(CALC, "weather=getWeather(A, B, C, TPRO==1)")
     field(FLNK, "$(user):weather:temperature")
     field(TPRO, "1")
 }
+# Slight problem with ..:refresh:
+# pycalc record is looking for a CALC iexpression that creates value (number)
+# for VAL.
+# The assignment "weather=getWeather(..)" evaluates into a dict,
+# which can't be assigned to VAL, putting the record into INVALID alarm
 record(pycalc, "$(user):weather:units:temperature")
 {
     field(INPA, "$(user):weather:units CP")
