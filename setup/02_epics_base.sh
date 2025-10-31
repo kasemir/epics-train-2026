@@ -3,6 +3,9 @@ mkdir -p /ics/tools
 cd /ics/tools
 
 echo "== EPICS base"
+sudo dnf install -y perl
+sudo dnf install -y readline-devel
+
 rm -rf base
 wget https://epics.anl.gov/download/base/base-7.0.9.tar.gz
 tar vzxf base-7.0.9.tar.gz

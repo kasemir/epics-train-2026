@@ -1,4 +1,7 @@
 echo "== Asyn"
+# For asyn (skipped with disabled VXI11 support)
+# sudo dnf install -y rpcgen libtirpc-devel
+
 cd /ics/tools/
 rm -rf asyn
 

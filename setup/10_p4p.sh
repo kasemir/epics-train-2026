@@ -1,4 +1,6 @@
 echo "== P4P"
+sudo dnf install -y python3-pip
+sudo dnf install -y python3-devel
 
 cd /ics/tools
 rm -rf p4p

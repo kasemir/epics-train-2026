@@ -1,4 +1,6 @@
 echo "== sequencer"
+sudo dnf install -y re2c
+
 cd /ics/tools
 rm -rf sequencer
 wget https://github.com/epics-modules/sequencer/archive/refs/tags/R2-2-9.tar.gz

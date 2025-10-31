@@ -1,4 +1,5 @@
 echo "== PVXS"
+sudo dnf install -y libevent-devel
 
 cd /ics/tools
 rm -rf pvxs

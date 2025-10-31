@@ -1,4 +1,6 @@
 echo "== Stream"
+sudo dnf install -y pcre-devel
+
 cd /ics/tools/
 rm -rf StreamDevice
 

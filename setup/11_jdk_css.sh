@@ -1,3 +1,5 @@
+sudo dnf install -y java-21-openjdk-devel
+
 cd /ics/tools
 
 echo "== MVN"
