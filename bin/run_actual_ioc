@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# Based on architecture, the IOC executable might be
+#  ../../bin/linux-x86_64
+#  ../../bin/linux-aarch64
+#
+# Start the st.cmd like this:
+#
+#     #!/ics/bin/run_actual_ioc ../../bin/*/demo
+#
+# This script will then locate for example ../../bin/linux-x86_64/demo
+# and execute the st.cmd with that.
+
+# Expecting IOC binary pattern like ../../bin/*/demo,
+# and the shebang mechanism will add the st.cmd name
+if [ $# -ne 2 ]
+then
+    echo "USAGE:   #!/ics/bin/run_actual_ioc ../../bin/*/ioc_binary"
+    exit 1
+fi
+PATTERN="$1"
+ST_CMD="$2"
+
+IOC=`echo $PATTERN`
+
+echo "Executing $IOC $ST_CMD in $PWD"
+
+$IOC $ST_CMD

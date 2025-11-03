@@ -1,4 +1,4 @@
-#!../../bin/linux-aarch64/demo
+#!/ics/bin/run_actual_ioc ../../bin/*/demo
 
 < envPaths
 

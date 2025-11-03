@@ -1,4 +1,12 @@
-#!/bin/sh
+#!/ics/bin/run_actual_ioc ../../bin/linux-*/busy
 
-# Might use linux-x86_64 or aarch64
-../../bin/linux-*/busy st.actual
+< envPaths
+
+## Register all support components
+dbLoadDatabase "../../dbd/busy.dbd"
+busy_registerRecordDeviceDriver(pdbbase) 
+
+## Load record instances
+dbLoadRecords("../../db/busy_demo.db")
+
+iocInit()

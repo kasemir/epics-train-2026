@@ -1,5 +1,4 @@
-#!../../bin/linux-aarch64/pyioc
-#- You may have to change linux-aarch64 to linux-x86_64
+#!/ics/bin/run_actual_ioc ../../bin/*/pyioc
 
 < envPaths
 

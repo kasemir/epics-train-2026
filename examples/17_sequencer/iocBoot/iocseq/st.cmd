@@ -1,4 +1,15 @@
-#!/bin/sh
+#!/ics/bin/run_actual_ioc ../../bin/*/seq
 
-# Might use linux-x86_64 or aarch64
-../../bin/linux-*/seq st.actual
+< envPaths
+
+## Register all support components
+dbLoadDatabase "../../dbd/seq.dbd"
+seq_registerRecordDeviceDriver(pdbbase) 
+
+## Load record instances
+dbLoadRecords("../../db/tank.db","S=demo")
+
+iocInit()
+
+## Start any sequence programs
+seq tank, "S=demo"
