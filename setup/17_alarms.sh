@@ -40,6 +40,7 @@ sleep 60
 netstat -an | fgrep 9092
 
 cd ..
+# TODO No longer necessary? Start alarm server to auto-create?
 ./create_alarm_topics.sh Accelerator
 ./list_topics.sh
 
