@@ -4,16 +4,16 @@ cd /ics/tools
 rm -rf pydevice
 
 # Use release
-#wget https://github.com/klemenv/PyDevice/archive/refs/tags/R1.1.1.tar.gz
-#tar vzxf R1*.tar.gz
-#rm R1*.tar.gz
-#mv PyDevice-* pydevice
+wget https://github.com/klemenv/PyDevice/archive/refs/tags/R1.3.3.tar.gz
+tar vzxf R1*.tar.gz
+rm R1*.tar.gz
+mv PyDevice-* pydevice
 
 # Use main
-wget https://github.com/klemenv/PyDevice/archive/refs/heads/main.zip
-unzip main.zip
-rm main.zip
-mv PyDevice-main pydevice
+#wget https://github.com/klemenv/PyDevice/archive/refs/heads/main.zip
+#unzip main.zip
+#rm main.zip
+#mv PyDevice-main pydevice
 
 cd pydevice
 
