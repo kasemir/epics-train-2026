@@ -8,7 +8,7 @@ listing the exact versions used at the time.
 Virtual Box
 -----------
 
-Download Virtual Box 7.2.2 for your system from https://www.virtualbox.org/wiki/Downloads
+Download Virtual Box 7.2.4 for your system from https://www.virtualbox.org/wiki/Downloads
 
 On Linux, if you get error ...
 
