@@ -1,0 +1,75 @@
+# Demo of 'request_on' communication with PLC
+
+record(bi, "on_off_state")
+{
+    field(DESC, "Read on/off state from PLC")
+    # field(DTYP, "ether_ip")
+    # field(INP,  "@plc from_plc_tag B 7")
+    field(INP,  "0")
+    field(SCAN, "1 second")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+
+# Operator writes '1' to request turning on
+record(bo, "request_on")
+{
+    field(DESC, "Set 'request on' bit in PLC tag")
+    # field(DTYP, "ether_ip")
+    # field(OUT,  "@plc to_plc_tag B 4 S 1")
+    field(ZNAM, "Turn On")
+    field(ONAM, "Turn On!")
+    # Timeout if on_off_state doesn't change to 'On'
+    field(HIGH, "20")
+    field(FLNK, "await_on")
+}
+
+record(busy, "await_on")
+{
+    field(DESC, "Block until on")
+    field(OMSL, "closed_loop")
+    field(DOL,  "request_on")
+}
+
+record(calcout, "check_on")
+{
+    field(DESC, "Check if device is on")
+    field(INPA, "on_off_state CP")
+    field(INPB, "request_on CP")
+    # Is device on, and on is requested? Clear the request & busy record
+    field(CALC, "(A&&B)?0:1")
+    field(OOPT, "Transition To Zero")
+    field(OUT,  "request_on PP")
+}
+
+# Operator writes '1' to request turning off
+record(bo, "request_off")
+{
+    field(DESC, "Set 'request off' bit in PLC tag")
+    # field(DTYP, "ether_ip")
+    # field(OUT,  "@plc to_plc_tag B 5 S 1")
+    field(ZNAM, "Turn Off")
+    field(ONAM, "Turn Off!")
+    # Timeout if on_off_state doesn't change to 'Off'
+    field(HIGH, "20")
+    field(FLNK, "await_off")
+}
+
+record(busy, "await_off")
+{
+    field(DESC, "Block until off")
+    field(OMSL, "closed_loop")
+    field(DOL,  "request_off")
+}
+
+record(calcout, "check_off")
+{
+    field(DESC, "Check if device is off")
+    field(INPA, "on_off_state CP")
+    field(INPB, "request_off CP")
+    # Is device off, and off is requested? Clear the request & busy record
+    field(CALC, "(!A&&B)?0:1")
+    field(OOPT, "Transition To Zero")
+    field(OUT,  "request_off PP")
+}
+
