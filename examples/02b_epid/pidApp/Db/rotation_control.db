@@ -1,0 +1,14 @@
+
+record(epid, "$(S):pid")
+{
+  field(DESC, "PID controller")
+  field(EGU,  "deg")
+  field(PREC, "1")
+  field(SCAN, ".1 second")
+  field(INP,  "$(S):angle")
+  field(KP,   "0.5")
+  field(DRVL, "-12")
+  field(DRVH, "12")
+  field(OUTL, "$(S):voltage PP")
+}
+

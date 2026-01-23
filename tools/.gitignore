@@ -16,6 +16,7 @@ pydevice
 pyepics
 RELEASE.local
 sequencer
+std
 StreamDevice
 vdct
 
