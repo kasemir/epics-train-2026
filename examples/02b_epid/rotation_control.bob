@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>Rotation Table</name>
+  <width>550</width>
+  <height>440</height>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <class>TITLE</class>

@@ -11,9 +11,16 @@ PROD_IOC = pid
 DBD += pid.dbd
 pid_DBD += base.dbd
 
-# Add EPID record, which is included in the 'std' module
+## Add EPID record, which is included in the 'std' module
 pid_DBD += stdSupport.dbd
 pid_LIBS += std
+
+## PVXS
+ifneq ($(PVXS),)
+    pid_DBD += pvxsIoc.dbd
+    pid_LIBS += pvxsIoc
+    pid_LIBS += pvxs
+endif
 
 pid_SRCS += pid_registerRecordDeviceDriver.cpp
 
