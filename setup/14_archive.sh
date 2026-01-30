@@ -25,3 +25,9 @@ mysql -u report -p'$report' \
 mysql -u report -p'$report' \
       -e 'SELECT * FROM smpl_eng;' archive
 
+# To export a smaller test database:
+# mysqldump -u root -p'$root' archive >archive_dump.sql
+#
+# To import:
+# mysql -u root -p'$root' archive <archive_dump.sql
+
