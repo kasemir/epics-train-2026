@@ -7,6 +7,7 @@ ADSimDetector
 base
 busy
 EPICSV4Sandbox
+ether_ip
 jdk
 kafka
 p4p

@@ -5,6 +5,8 @@ cainfo
 camonitor
 caput
 casw
+eipIoc
+ether_ip_test
 makeBaseApp.pl
 pvagw
 pvget

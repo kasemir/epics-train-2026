@@ -4,7 +4,7 @@ echo "== EPID (std)"
 cd /ics/tools/
 rm -rf std
 
-wget https://github.com/epics-modules/std/archive/refs/heads/master.zip``
+wget https://github.com/epics-modules/std/archive/refs/heads/master.zip
 unzip master.zip 
 rm master.zip 
 mv std-master std
