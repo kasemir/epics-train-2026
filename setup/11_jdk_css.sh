@@ -1,16 +1,17 @@
 sudo dnf install -y java-21-openjdk-devel
+sudo dnf install -y maven-openjdk21
 
 cd /ics/tools
 
 echo "== MVN"
-rm -rf apache-maven
-wget https://dlcdn.apache.org/maven/maven-3/3.9.11/binaries/apache-maven-3.9.11-bin.zip
-unzip apache-maven-*.zip
-rm apache-maven-*.zip
-mv apache-maven-* apache-maven
+#rm -rf apache-maven
+#wget https://dlcdn.apache.org/maven/maven-3/3.9.11/binaries/apache-maven-3.9.11-bin.zip
+#unzip apache-maven-*.zip
+#rm apache-maven-*.zip
+#mv apache-maven-* apache-maven
 
-export M2_HOME=/ics/tools/apache-maven
-export PATH="$M2_HOME/bin:$PATH"
+#export M2_HOME=/ics/tools/apache-maven
+#export PATH="$M2_HOME/bin:$PATH"
 mvn -version
 
 
