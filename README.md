@@ -2,7 +2,7 @@ EPICS Training 2026
 ===================
 
 This is a log of the training VM setup as performed on Linux (Intel) and Mac (ARM)
-listing the exact versions used at the time.
+listing the versions used at the time.
 
 
 Virtual Box
@@ -10,7 +10,11 @@ Virtual Box
 
 Download Virtual Box 7.2.6 for your system from https://www.virtualbox.org/wiki/Downloads
 
-On Linux, if you get error ...
+For example, using RHEL9 install the `*.rpm` with
+
+    sudo rpm -Uvh VirtualBox...el9...rpm
+    
+On Linux, if startup ends with error ...
 
     VERR_VMX_IN_VMX_ROOT_MODE VirtualBox can't operate in VMX root mode.
     Please disable the KVM kernel extension
