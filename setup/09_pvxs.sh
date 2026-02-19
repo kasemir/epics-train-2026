@@ -16,6 +16,6 @@ do
     ln -s `pwd`/bin/*/$cmd ../../bin
 done
 
-pvxinfo -h
+/ics/bin/pvxinfo -h
 
 
