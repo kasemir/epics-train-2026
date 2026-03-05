@@ -1,0 +1,6 @@
+record(calc, "noise$(NUM)")
+{
+    field(SCAN, "1 second")
+    field(CALC, "RNDM*$(LIMIT)")
+}
+

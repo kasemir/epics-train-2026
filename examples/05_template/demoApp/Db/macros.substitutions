@@ -1,0 +1,13 @@
+file "macro.db"
+{
+    { NUM="1", LIMIT="10" }
+    { NUM="2", LIMIT="100" }
+}
+
+file "macro.db"
+{
+    pattern { NUM, LIMIT }
+            { 3,   300   }
+            { 4,   400   }
+}
+
