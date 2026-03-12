@@ -3,8 +3,8 @@ echo "== Alarms"
 cd /ics/tools
 rm -rf kafka
 
-wget https://dlcdn.apache.org/kafka/4.1.0/kafka_2.13-4.1.0.tgz
-#wget https://dlcdn.apache.org/kafka/3.9.1/kafka_2.13-3.9.1.tgz
+wget https://archive.apache.org/dist/kafka/4.1.0/kafka_2.13-4.1.0.tgz
+#wget https://dlcdn.apache.org/kafka/4.1.0/kafka_2.13-4.1.0.tgz
 
 tar vzxf kafka_*tgz
 rm kafka_*tgz
