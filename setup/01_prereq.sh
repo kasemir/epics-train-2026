@@ -3,6 +3,13 @@
 sudo systemctl stop firewalld
 sudo systemctl disable firewalld
 
+# The hosted OS appears on the network
+# under the host's IP address.
+# On the lab network, that might result in
+# "ssl certificate problem: self-signed certificate
+# Temporary woraround:
+# git config --global http.sslVerify false
+
 # Create 'expert' user for ASDG tests etc.
 sudo /sbin/adduser expert
 echo 'expert:$expert' | sudo chpasswd
