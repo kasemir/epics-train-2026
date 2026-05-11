@@ -21,7 +21,7 @@ ulimit -r 99 -e 99 -l 10000000000
 #    softIoc ...
 # but it's better practice to run IOCs as a non-root user,
 # so switch back to `epics-dev` for running the IOC
-cd /ics/training/examples/01_first_steps
-su epics-dev -c "/ics/training/bin/softIoc -m S=training -d very_first.db"
+cd /ics/examples/01_first_steps
+su epics-dev -c "/ics/bin/softIoc -m S=training -d very_first.db"
 
 
