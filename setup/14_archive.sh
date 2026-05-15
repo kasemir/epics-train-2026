@@ -3,7 +3,7 @@ echo "== Archive"
 sudo dnf install -y lynx
 sudo dnf install -y mariadb-server
 sudo systemctl start mariadb
-# sudo systemctl enable mariadb.service
+sudo systemctl enable mariadb.service
 
 # Interactive setup, doesn't seem to do more than set PW
 # sudo /usr/bin/mysql_secure_installation"
