@@ -1,0 +1,48 @@
+# Alarm zone example
+#
+#
+# A value in the range of 20..50 is considered bad,
+# while outside the range is fine.
+#
+# Can't use HIGH=20, LOW=50 because
+# alarm thresholds need to be LOLO<LOW<HIGH<HIHI
+#
+#   softIoc -d alarm_zone.db
+
+record(ai, "V")
+{
+    field(HOPR, "100")
+    field(LOPR, "0")
+    field(INP,  "0")
+    field(EGU,  "V")
+    field(PREC, "2")
+    field(PINI, "YES")
+}
+
+# Inside alarm zone of 20..50?
+record(calc, "VStatClc")
+{
+   field(INPA, "V CP")
+   field(CALC, "A>20 && A<50")
+   field(FLNK, "VStat")
+}
+
+# Turn 0/1 from VStatClc into alarm and better looking label
+record(bi, "VStat")
+{
+   field(INP,  "VStatClc")
+   field(ZNAM, "OK")
+   field(ONAM, "In bad range")
+   field(OSV,  "MINOR")
+   field(FLNK, "VRdbk")
+}
+
+# Show original V but attach the alarm
+record(calc, "VRdbk")
+{
+    field(INPA, "V")
+    field(INPB, "VStat MS")
+    field(CALC, "A")
+    field(EGU,  "V")
+    field(PREC, "2")
+}
